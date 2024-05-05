@@ -47,7 +47,7 @@ const Navbar = () => {
             <Link to={"/applications/me"} onClick={() => setShow(false)}>
               {user && user.role === "Employer"
                 ? "PAYMENT NOTIFICATIONS"
-                : "MY APPLICATIONS"}
+                : "YOUR PAYMENTS"}
             </Link>
           </li>
           {user && user.role === "Employer" ? (

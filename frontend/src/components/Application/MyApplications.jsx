@@ -72,7 +72,7 @@ const MyApplications = () => {
     <section className="my_applications page">
       {user && user.role === "Job Seeker" ? (
         <div className="container">
-          <h1>My Applications</h1>
+          <h1>YOUR PAYMENTS</h1>
           {applications.length <= 0 ? (
             <>
               {" "}

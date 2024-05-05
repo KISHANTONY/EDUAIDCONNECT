@@ -77,6 +77,7 @@ p {
   min-width: 1500px;
   max-width: 1500px;
   margin: 0 auto;
+  background: #999999;
   min-height: 100vh;
 }
 .authPage .container {
@@ -84,7 +85,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #fff;
+  background-image: url('../public/heroS.jpg');
   padding: 20px 20px;
 }
 .authPage .container .header {

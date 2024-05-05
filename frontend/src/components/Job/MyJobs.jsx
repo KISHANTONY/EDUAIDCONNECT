@@ -194,6 +194,7 @@ const MyJobs = () => {
                             </option>
                           </select>
                         </div>
+                        
                         <div>
                           <span>
                             Salary:{" "}

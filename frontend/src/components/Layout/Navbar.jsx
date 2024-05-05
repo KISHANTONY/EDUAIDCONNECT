@@ -40,7 +40,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to={"/job/getall"} onClick={() => setShow(false)}>
-              
+              REQUESTS
             </Link>
           </li>
           <li>

@@ -10,14 +10,14 @@ const HeroSection = () => {
       <div className="heroSection">
         <div className="container">
           <div className="title">
-            <h1>Find a job that suits</h1>
-            <h1>your interests and skills</h1>
+            <h1>We rise by</h1>
+            <h2>lifting others</h2>
             <p>
              
             </p>
           </div>
           <div className="image">
-            <img src="/heroS.jpg" alt="hero" />
+            <img src="/home.jpg" alt="hero" />
           </div>
         </div>
         <div className="details">
@@ -33,7 +33,28 @@ const HeroSection = () => {
             );
           })}
         </div>
+        
       </div>
+      <div className="about">
+    <div className="imgcontanner">
+        <div className="aboutimg"></div>
+    </div>
+    <div className="aboutcontent">
+        <h5>_</h5>
+        <h1>Why Donate?</h1>
+        <p>We know that students are looking for a platform to seek financial assistance
+            for their education.
+            So we connect students with potential donors, scholarships, and
+            other funding opportunities
+            and empower students to overcome financial barriers and
+            succeed academically.</p>
+
+        <br />
+        <br />
+        <h5>_</h5>
+    </div>
+</div>
+
     </>
   );
 };

@@ -64,7 +64,7 @@ const Application = () => {
   return (
     <section className="application">
       <div className="container">
-        <h3>Application Form</h3>
+        <h3>PAYMENT</h3>
         <form onSubmit={handleApplication}>
           <input
             type="text"
@@ -91,7 +91,7 @@ const Application = () => {
             onChange={(e) => setAddress(e.target.value)}
           />
           <textarea
-            placeholder="CoverLetter..."
+            placeholder="Say Something..."
             value={coverLetter}
             onChange={(e) => setCoverLetter(e.target.value)}
           />
@@ -108,7 +108,7 @@ const Application = () => {
               style={{ width: "100%" }}
             />
           </div>
-          <button type="submit">Send Application</button>
+          <button type="submit">DONE</button>
         </form>
       </div>
     </section>

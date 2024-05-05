@@ -76,7 +76,7 @@ const MyApplications = () => {
           {applications.length <= 0 ? (
             <>
               {" "}
-              <h4>No Applications Found</h4>{" "}
+              <h4>No Payments Found</h4>{" "}
             </>
           ) : (
             applications.map((element) => {

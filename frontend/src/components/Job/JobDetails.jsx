@@ -66,7 +66,7 @@ const JobDetails = () => {
           {user && user.role === "Employer" ? (
             <></>
           ) : (
-            <Link to={`/application/${job._id}`}>Apply Now</Link>
+            <Link to={`/application/${job._id}`}>Pay Now</Link>
           )}
         </div>
       </div>

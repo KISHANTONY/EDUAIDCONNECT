@@ -27,7 +27,7 @@ const Jobs = () => {
   return (
     <section className="jobs page">
       <div className="container">
-        <h1>ALL AVAILABLE JOBS</h1>
+        <h1>REQUESTS</h1>
         <div className="banner">
           {jobs.jobs &&
             jobs.jobs.map((element) => {
@@ -36,7 +36,7 @@ const Jobs = () => {
                   <p>{element.title}</p>
                   <p>{element.Gender}</p>
                   <p>{element.UPI}</p>
-                  <Link to={`/job/${element._id}`}>Job Details</Link>
+                  <Link to={`/job/${element._id}`}>DONATE NOW</Link>
                 </div>
               );
             })}

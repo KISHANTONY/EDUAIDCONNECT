@@ -29,9 +29,8 @@ const Navbar = () => {
   return (
     <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
       <div className="container">
-        <div className="logo">
-          <img src="/JobZee-logos__white.png" alt="logo" />
-        </div>
+          <h3><span>EduAid</span>Connect</h3>
+      
         <ul className={!show ? "menu" : "show-menu menu"}>
           <li>
             <Link to={"/"} onClick={() => setShow(false)}>

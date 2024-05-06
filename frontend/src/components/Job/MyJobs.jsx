@@ -87,7 +87,7 @@ const MyJobs = () => {
     <>
       <div className="myJobs page">
         <div className="container">
-          <h1>Your Posted Jobs</h1>
+          <h1>Your Posted Requests</h1>
           {myJobs.length > 0 ? (
             <>
               <div className="banner">

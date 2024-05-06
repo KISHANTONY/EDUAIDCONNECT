@@ -6,34 +6,41 @@ import { IoMdSend } from "react-icons/io";
 const HowItWorks = () => {
   return (
     <>
-      <div className="howitworks">
-        <div className="container">
-          <h3>How EduAidConnect Works</h3>
-          <div className="banner">
-            <div className="card">
-              <FaUserPlus />
-              <p>Create Account</p>
-              <p>
-               
-              </p>
-            </div>
-            <div className="card">
-              <MdFindInPage />
-              <p>Post a request</p>
-              <p>
-                
-              </p>
-            </div>
-            <div className="card">
-              <IoMdSend />
-              <p>Apply For Job/Recruit Suitable Candidates</p>
-              <p>
-               
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="service" id="service">
+
+<h5>SERVICES</h5>
+
+<div class="details">
+
+    <div class="info">
+
+        <div class="logo"><i class="fas fa-book-reader"></i></div>
+        <p id="head">What we do</p>
+        <p>We help underprivileged students with financial support for their better education</p>
+
+    </div>
+
+    <div class="info" data-aos="fade-up">
+
+        <div class="logo"><i class="fas fa-book-open"></i></div>
+        <p id="head">How we do it</p>
+        <p>We allow potential donors to connect with students through our website</p>
+    </div>
+
+    <div class="info" data-aos="fade-up">
+
+        <div class="logo"><i class="fas fa-book"></i></div>
+        <p id="head">Make a difference</p>
+        <p>Provide equal opportunities to students in their accademics</p>
+
+    </div>
+
+
+</div>
+
+</div>
+
+
     </>
   );
 };

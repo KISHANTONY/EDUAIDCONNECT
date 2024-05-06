@@ -52,8 +52,9 @@ const Register = () => {
     <>
       <section className="authPage">
         <div className="container">
+          <h4><span>EduAid</span>Connect</h4>
           <div className="header">
-            <img src="/JobZeelogo.png" alt="logo" />
+          
             <h3>Create a new account</h3>
           </div>
           <form>
@@ -62,8 +63,8 @@ const Register = () => {
               <div>
                 <select value={role} onChange={(e) => setRole(e.target.value)}>
                   <option value="">Select Role</option>
-                  <option value="Employer">Employer</option>
-                  <option value="Job Seeker">Job Seeker</option>
+                  <option value="Employer">Student</option>
+                  <option value="Job Seeker">Sponsor</option>
                 </select>
                 <FaRegUser />
               </div>
@@ -73,7 +74,7 @@ const Register = () => {
               <div>
                 <input
                   type="text"
-                  placeholder="Zeeshan"
+                  placeholder="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />

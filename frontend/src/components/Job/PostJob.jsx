@@ -76,7 +76,7 @@ const PostJob = () => {
     <>
       <div className="job_post page">
         <div className="container">
-          <h3>POST NEW Re</h3>
+          <h3>POST NEW REQUEST</h3>
           <form onSubmit={handleJobPost}>
             <div className="wrapper">
               <input
@@ -108,14 +108,14 @@ const PostJob = () => {
                 type="text"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                placeholder="City"
+                placeholder="Collage"
               />
             </div>
             <input
               type="text"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              placeholder="Location"
+              placeholder="Address"
             />
             <div className="salary_wrapper">
               <select
@@ -160,7 +160,7 @@ const PostJob = () => {
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Reason"
             />
-            <button type="submit">Create Job</button>
+            <button type="submit">Done</button>
           </form>
         </div>
       </div>

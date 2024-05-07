@@ -8,20 +8,15 @@ const HeroSection = () => {
   return (
     <>
       <div className="heroSection">
-        <div className="container">
-        <div className="cover">
-      <div className="information">
-        <h1>-</h1>
-        <h2>We rise by</h2>
-        <h1><span>Lifting others</span></h1>
-        <h3>- Robert Ingersoll</h3>
-        <h1>-</h1>
-        <a href="/studlog" target="_blank"><button>Student Login</button></a>
-        <a href="sponsorlog.html" target="_blank"><button>Sponsor Login</button></a>
-    </div>
-</div>
-
-        </div>
+          <div className="cover">
+            <div className="information">
+              <h1>-</h1>
+              <h2>We rise by</h2>
+              <h1><span>Lifting others</span></h1>
+              <h3>- Robert Ingersoll</h3>
+              <h1>-</h1>
+            </div>
+          </div>
         <div className="details">
           {details.map((element) => {
             return (

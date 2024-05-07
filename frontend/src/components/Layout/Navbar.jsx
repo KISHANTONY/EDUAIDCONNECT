@@ -53,7 +53,7 @@ const Navbar = () => {
             <>
               <li>
                 <Link to={"/job/post"} onClick={() => setShow(false)}>
-                  POST NEW REQUESTS
+                  POST NEW REQUEST
                 </Link>
               </li>
               <li>

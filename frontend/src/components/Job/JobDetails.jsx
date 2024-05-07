@@ -30,10 +30,10 @@ const JobDetails = () => {
   return (
     <section className="jobDetail page">
       <div className="container">
-        <h3>Job Details</h3>
+        <h3>Student Details</h3>
         <div className="banner">
           <p>
-            Title: <span> {job.title}</span>
+            Name: <span> {job.title}</span>
           </p>
           <p>
             Gender: <span>{job.Gender}</span>
@@ -42,7 +42,7 @@ const JobDetails = () => {
             UPI: <span>{job.UPI}</span>
           </p>
           <p>
-            City: <span>{job.city}</span>
+            Collage: <span>{job.city}</span>
           </p>
           <p>
             Location: <span>{job.location}</span>
@@ -51,10 +51,10 @@ const JobDetails = () => {
             Description: <span>{job.description}</span>
           </p>
           <p>
-            Job Posted On: <span>{job.jobPostedOn}</span>
+            Posted On: <span>{job.jobPostedOn}</span>
           </p>
           <p>
-            Salary:{" "}
+            Amount:{" "}
             {job.fixedSalary ? (
               <span>{job.fixedSalary}</span>
             ) : (

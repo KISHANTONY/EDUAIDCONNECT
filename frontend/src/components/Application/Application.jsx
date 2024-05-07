@@ -86,7 +86,7 @@ const Application = () => {
           />
           <input
             type="text"
-            placeholder="Your Address"
+            placeholder="City"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />

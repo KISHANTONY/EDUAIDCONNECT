@@ -55,11 +55,11 @@ const JobDetails = () => {
           </p>
           <p>
             Amount:{" "}
-            {job.fixedSalary ? (
-              <span>{job.fixedSalary}</span>
+            {job.fixedAmount ? (
+              <span>{job.fixedAmount}</span>
             ) : (
               <span>
-                {job.salaryFrom} - {job.salaryTo}
+                {job.AmountFrom} - {job.AmountTo}
               </span>
             )}
           </p>

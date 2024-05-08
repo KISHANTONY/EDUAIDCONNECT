@@ -3,36 +3,36 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Context } from "../../main";
-const PostJob = () => {
+const Postreq = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [Gender, setGender] = useState("");
   const [UPI, setUPI] = useState("");
   const [city, setCity] = useState("");
   const [location, setLocation] = useState("");
-  const [salaryFrom, setSalaryFrom] = useState("");
-  const [salaryTo, setSalaryTo] = useState("");
-  const [fixedSalary, setFixedSalary] = useState("");
-  const [salaryType, setSalaryType] = useState("default");
+  const [AmountFrom, setAmountFrom] = useState("");
+  const [AmountTo, setAmountTo] = useState("");
+  const [fixedAmount, setFixedAmount] = useState("");
+  const [AmountType, setAmountType] = useState("default");
 
   const { isAuthorized, user } = useContext(Context);
 
   const handleJobPost = async (e) => {
     e.preventDefault();
-    if (salaryType === "Fixed Salary") {
-      setSalaryFrom("");
-      setSalaryFrom("");
-    } else if (salaryType === "Ranged Salary") {
-      setFixedSalary("");
+    if (AmountType === "Fixed Amount") {
+      setAmountFrom("");
+      setAmountFrom("");
+    } else if (AmountType === "Ranged Amount") {
+      setFixedAmount("");
     } else {
-      setSalaryFrom("");
-      setSalaryTo("");
-      setFixedSalary("");
+      setAmountFrom("");
+      setAmountTo("");
+      setFixedAmount("");
     }
     await axios
       .post(
         "http://localhost:4000/api/v1/job/post",
-        fixedSalary.length >= 4
+        fixedAmount.length >= 4
           ? {
               title,
               description,
@@ -40,7 +40,7 @@ const PostJob = () => {
               UPI,
               city,
               location,
-              fixedSalary,
+              fixedAmount,
             }
           : {
               title,
@@ -49,8 +49,8 @@ const PostJob = () => {
               UPI,
               city,
               location,
-              salaryFrom,
-              salaryTo,
+              AmountFrom,
+              AmountTo,
             },
         {
           withCredentials: true,
@@ -91,7 +91,7 @@ const PostJob = () => {
               >
                 <option value="">Gender</option>
                 <option value="Male">Male</option>
-                <option value="Mobile App Development">
+                <option value="Female">
                  Female
                 </option>
                   
@@ -117,43 +117,17 @@ const PostJob = () => {
               onChange={(e) => setLocation(e.target.value)}
               placeholder="Address"
             />
-            <div className="salary_wrapper">
-              <select
-                value={salaryType}
-                onChange={(e) => setSalaryType(e.target.value)}
-              >
-                <option value="default">Amount</option>
-                <option value="Fixed Salary">Type amount</option>
-            
-              </select>
+           <div className="Amount_wrapper">
               <div>
-                {salaryType === "default" ? (
-                  <p>Please provide Salary Type *</p>
-                ) : salaryType === "Fixed Salary" ? (
-                  <input
-                    type="number"
-                    placeholder="Enter Amount"
-                    value={fixedSalary}
-                    onChange={(e) => setFixedSalary(e.target.value)}
-                  />
-                ) : (
-                  <div className="ranged_salary">
-                    <input
-                      type="number"
-                      placeholder="Salary From"
-                      value={salaryFrom}
-                      onChange={(e) => setSalaryFrom(e.target.value)}
-                    />
-                    <input
-                      type="number"
-                      placeholder="Salary To"
-                      value={salaryTo}
-                      onChange={(e) => setSalaryTo(e.target.value)}
-                    />
-                  </div>
-                )}
+                <input
+                  type="number"
+                  placeholder="Enter Amount"
+                  value={fixedAmount}
+                  onChange={(e) => setFixedAmount(e.target.value)}
+                />
               </div>
             </div>
+
             <textarea
               rows="10"
               value={description}
@@ -168,4 +142,4 @@ const PostJob = () => {
   );
 };
 
-export default PostJob;
+export default Postreq;

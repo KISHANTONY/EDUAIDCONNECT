@@ -1,7 +1,7 @@
 import { catchAsyncErrors } from "../middlewares/catchAsyncError.js";
 import ErrorHandler from "../middlewares/error.js";
 import { Application } from "../models/applicationSchema.js";
-import { Job } from "../models/jobSchema.js";
+import { Job } from "../models/Reqschema.js";
 import cloudinary from "cloudinary";
 
 export const postApplication = catchAsyncErrors(async (req, res, next) => {
@@ -77,7 +77,7 @@ export const postApplication = catchAsyncErrors(async (req, res, next) => {
   });
   res.status(200).json({
     success: true,
-    message: "Application Submitted!",
+    message: "Submitted!",
     application,
   });
 });
@@ -99,7 +99,7 @@ export const employerGetAllApplications = catchAsyncErrors(
   }
 );
 
-export const jobseekerGetAllApplications = catchAsyncErrors(
+export const ReqseekerGetAllApplications = catchAsyncErrors(
   async (req, res, next) => {
     const { role } = req.user;
     if (role === "Employer") {
@@ -116,7 +116,7 @@ export const jobseekerGetAllApplications = catchAsyncErrors(
   }
 );
 
-export const jobseekerDeleteApplication = catchAsyncErrors(
+export const ReqseekerDeleteApplication = catchAsyncErrors(
   async (req, res, next) => {
     const { role } = req.user;
     if (role === "Employer") {

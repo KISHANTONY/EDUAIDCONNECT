@@ -26,7 +26,7 @@ const MyApplications = () => {
           });
       } else {
         axios
-          .get("http://localhost:4000/api/v1/application/jobseeker/getall", {
+          .get("http://localhost:4000/api/v1/application/Reqseeker/getall", {
             withCredentials: true,
           })
           .then((res) => {
@@ -81,7 +81,7 @@ const MyApplications = () => {
           ) : (
             applications.map((element) => {
               return (
-                <JobSeekerCard
+                <ReqseekerCard
                   element={element}
                   key={element._id}
                   deleteApplication={deleteApplication}
@@ -120,7 +120,7 @@ const MyApplications = () => {
 
 export default MyApplications;
 
-const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
+const ReqseekerCard = ({ element, deleteApplication, openModal }) => {
   return (
     <>
       <div className="job_seeker_card">
@@ -150,7 +150,7 @@ const JobSeekerCard = ({ element, deleteApplication, openModal }) => {
         </div>
         <div className="btn_area">
           <button onClick={() => deleteApplication(element._id)}>
-            Delete Application
+            Delete 
           </button>
         </div>
       </div>

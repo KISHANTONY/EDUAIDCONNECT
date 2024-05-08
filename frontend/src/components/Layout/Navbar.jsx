@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../../main";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -29,19 +29,20 @@ const Navbar = () => {
   return (
     <nav className={isAuthorized ? "navbarShow" : "navbarHide"}>
       <div className="container">
-          <h3><span>EduAid</span>Connect</h3>
-      
+        <h3><span>EduAid</span>Connect</h3>
         <ul className={!show ? "menu" : "show-menu menu"}>
           <li>
             <Link to={"/"} onClick={() => setShow(false)}>
               HOME
             </Link>
           </li>
-          <li>
-            <Link to={"/job/getall"} onClick={() => setShow(false)}>
-              REQUESTS
-            </Link>
-          </li>
+          {user && user.role === "Job Seeker" && (
+            <li>
+              <Link to={"/job/getall"} onClick={() => setShow(false)}>
+                REQUESTS
+              </Link>
+            </li>
+          )}
           <li>
             <Link to={"/applications/me"} onClick={() => setShow(false)}>
               {user && user.role === "Employer"
@@ -49,7 +50,7 @@ const Navbar = () => {
                 : "YOUR PAYMENTS"}
             </Link>
           </li>
-          {user && user.role === "Employer" ? (
+          {user && user.role === "Employer" && (
             <>
               <li>
                 <Link to={"/job/post"} onClick={() => setShow(false)}>
@@ -62,10 +63,7 @@ const Navbar = () => {
                 </Link>
               </li>
             </>
-          ) : (
-            <></>
           )}
-
           <button onClick={handleLogout}>LOGOUT</button>
         </ul>
         <div className="hamburger">

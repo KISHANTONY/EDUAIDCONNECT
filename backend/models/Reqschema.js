@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const jobSchema = new mongoose.Schema({
+const reqschema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "Please provide a title."],
@@ -30,20 +30,20 @@ const jobSchema = new mongoose.Schema({
     required: [true, "Please provide location."],
     minLength: [20, "Location must contian at least 20 characters!"],
   },
-  fixedSalary: {
+  fixedAmount: {
     type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
-    maxLength: [9, "Salary cannot exceed 9 digits"],
+    minLength: [4, "Amount must contain at least 4 digits"],
+    maxLength: [9, "Amount cannot exceed 9 digits"],
   },
-  salaryFrom: {
+  AmountFrom: {
     type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
-    maxLength: [9, "Salary cannot exceed 9 digits"],
+    minLength: [4, "Amount must contain at least 4 digits"],
+    maxLength: [9, "Amount cannot exceed 9 digits"],
   },
-  salaryTo: {
+  AmountTo: {
     type: Number,
-    minLength: [4, "Salary must contain at least 4 digits"],
-    maxLength: [9, "Salary cannot exceed 9 digits"],
+    minLength: [4, "Amount must contain at least 4 digits"],
+    maxLength: [9, "Amount cannot exceed 9 digits"],
   },
   expired: {
     type: Boolean,
@@ -60,4 +60,4 @@ const jobSchema = new mongoose.Schema({
   },
 });
 
-export const Job = mongoose.model("Job", jobSchema);
+export const Job = mongoose.model("Job", reqschema);

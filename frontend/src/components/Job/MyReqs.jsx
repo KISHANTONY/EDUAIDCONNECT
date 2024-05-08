@@ -6,27 +6,27 @@ import { RxCross2 } from "react-icons/rx";
 import { Context } from "../../main";
 import { useNavigate } from "react-router-dom";
 
-const MyJobs = () => {
-  const [myJobs, setMyJobs] = useState([]);
+const MyReqs = () => {
+  const [myReqs, setMyReqs] = useState([]);
   const [editingMode, setEditingMode] = useState(null);
   const { isAuthorized, user } = useContext(Context);
 
   const navigateTo = useNavigate();
-  //Fetching all jobs
+  //Fetching all Reqs
   useEffect(() => {
-    const fetchJobs = async () => {
+    const fetchReqs = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/job/getmyjobs",
+          "http://localhost:4000/api/v1/job/getmyReqs",
           { withCredentials: true }
         );
-        setMyJobs(data.myJobs);
+        setMyReqs(data.myReqs);
       } catch (error) {
         toast.error(error.response.data.message);
-        setMyJobs([]);
+        setMyReqs([]);
       }
     };
-    fetchJobs();
+    fetchReqs();
   }, []);
   if (!isAuthorized || (user && user.role !== "Employer")) {
     navigateTo("/");
@@ -45,7 +45,7 @@ const MyJobs = () => {
 
   //Function For Updating The Job
   const handleUpdateJob = async (jobId) => {
-    const updatedJob = myJobs.find((job) => job._id === jobId);
+    const updatedJob = myReqs.find((job) => job._id === jobId);
     await axios
       .put(`http://localhost:4000/api/v1/job/update/${jobId}`, updatedJob, {
         withCredentials: true,
@@ -67,7 +67,7 @@ const MyJobs = () => {
       })
       .then((res) => {
         toast.success(res.data.message);
-        setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));
+        setMyReqs((prevReqs) => prevReqs.filter((job) => job._id !== jobId));
       })
       .catch((error) => {
         toast.error(error.response.data.message);
@@ -75,9 +75,9 @@ const MyJobs = () => {
   };
 
   const handleInputChange = (jobId, field, value) => {
-    // Update the job object in the jobs state with the new value
-    setMyJobs((prevJobs) =>
-      prevJobs.map((job) =>
+    // Update the job object in the Reqs state with the new value
+    setMyReqs((prevReqs) =>
+      prevReqs.map((job) =>
         job._id === jobId ? { ...job, [field]: value } : job
       )
     );
@@ -85,13 +85,13 @@ const MyJobs = () => {
 
   return (
     <>
-      <div className="myJobs page">
+      <div className="myReqs page">
         <div className="container">
           <h1>Your Posted Requests</h1>
-          {myJobs.length > 0 ? (
+          {myReqs.length > 0 ? (
             <>
               <div className="banner">
-                {myJobs.map((element) => (
+                {myReqs.map((element) => (
                   <div className="card" key={element._id}>
                     <div className="content">
                       <div className="short_fields">
@@ -165,8 +165,8 @@ const MyJobs = () => {
                             <option value="Male">
                               Male
                             </option>
-                            <option value="Mobile App Development">
-                              Mobile App Development
+                            <option value="Female">
+                              Female
                             </option>
                             <option value="Frontend Web Development">
                               Frontend Web Development
@@ -197,18 +197,18 @@ const MyJobs = () => {
                         
                         <div>
                           <span>
-                            Salary:{" "}
-                            {element.fixedSalary ? (
+                            Amount:{" "}
+                            {element.fixedAmount ? (
                               <input
                                 type="number"
                                 disabled={
                                   editingMode !== element._id ? true : false
                                 }
-                                value={element.fixedSalary}
+                                value={element.fixedAmount}
                                 onChange={(e) =>
                                   handleInputChange(
                                     element._id,
-                                    "fixedSalary",
+                                    "fixedAmount",
                                     e.target.value
                                   )
                                 }
@@ -220,11 +220,11 @@ const MyJobs = () => {
                                   disabled={
                                     editingMode !== element._id ? true : false
                                   }
-                                  value={element.salaryFrom}
+                                  value={element.AmountFrom}
                                   onChange={(e) =>
                                     handleInputChange(
                                       element._id,
-                                      "salaryFrom",
+                                      "AmountFrom",
                                       e.target.value
                                     )
                                   }
@@ -234,11 +234,11 @@ const MyJobs = () => {
                                   disabled={
                                     editingMode !== element._id ? true : false
                                   }
-                                  value={element.salaryTo}
+                                  value={element.AmountTo}
                                   onChange={(e) =>
                                     handleInputChange(
                                       element._id,
-                                      "salaryTo",
+                                      "AmountTo",
                                       e.target.value
                                     )
                                   }
@@ -345,7 +345,7 @@ const MyJobs = () => {
             </>
           ) : (
             <p>
-              You've not posted any job or may be you deleted all of your jobs!
+              You've not posted any job or may be you deleted all of your Reqs!
             </p>
           )}
         </div>
@@ -354,4 +354,4 @@ const MyJobs = () => {
   );
 };
 
-export default MyJobs;
+export default MyReqs;
